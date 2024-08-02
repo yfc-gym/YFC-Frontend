@@ -1,0 +1,118 @@
+.plans-home > h3 {
+    font-family: var(--ff-trebuchet);
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: right;
+    max-width: 30ch;
+
+    padding-block: 2.75rem;
+    padding-right: 3.5rem;
+    margin-left: auto;
+
+    color: var(--clr-primary-200);
+}
+
+.plans-home__plans {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.plans-home__plan {
+    position: relative;
+    width: 27.5rem; height: 32.5rem;
+
+    margin-block: 1.5rem;
+    margin-inline: 1.5rem;
+}
+
+.plans-home__plan img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(.5);
+    
+    transition: 800ms ease;
+    border-radius: 1.25rem;
+}
+
+.plans-home__plan img:is(:focus, :hover) {
+    filter: brightness(.8);
+}
+
+.plans-home__plan .content {
+    position: absolute;
+    bottom: 2rem; left: 2rem;
+    max-width: 80%;
+}
+
+.plans-home .content h4 {
+    font-family: var(--ff-supreme);
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    color: whitesmoke;
+}
+
+.plans-home .content p {
+    font-family: var(--ff-alata);
+    font-size: 1.125rem;
+    max-width: 25ch;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    color: whitesmoke;
+}
+
+.plans-home .content a {
+    display: inline-block;
+    width: 20rem;
+    border: 1px solid whitesmoke;
+    border-radius: .625rem;
+
+    font-family: var(--ff-trebuchet);
+    font-size: 1.125rem;
+    font-weight: bold;
+
+    padding-block: .625rem;
+    padding-inline: 1rem;
+    margin-top: 1.5rem;
+
+    color: whitesmoke;
+}
+
+.plans-home .content a:is(:focus, :hover) {
+    background-color: whitesmoke;
+    color: var(--clr-primary-200);
+}
+
+@media only screen and (width < 62.5em) {
+
+    .plans-home h3 {
+        font-size: 2.5rem;
+    }
+
+}
+
+@media only screen and (width < 45em) {
+
+    .plans-home h3 {
+        font-size: 1.75rem;
+        max-width: 22.5ch;
+
+        padding-right: 1.5rem;
+    }
+
+    .plans-home .content h4 {
+        font-size: 1.75rem;
+    }
+
+    .plans-home .content a {
+        width: 15rem;
+    }
+
+}

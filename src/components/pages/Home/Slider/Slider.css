@@ -1,0 +1,279 @@
+@keyframes showContent {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.slider {
+    position: relative;
+    height: 100dvh;
+}
+
+.slider .list .item {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 500ms;
+}
+
+.slider .list .item.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.slider .list .item::after {
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 100%;
+    content: '';
+
+    background-image: linear-gradient(to right, hsl(258 100% 12% / 0.6), hsl(258 100% 12% / 0.3));
+}
+
+.slider .list .item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(1);
+}
+
+.slider .list .item .content {
+    position: absolute;
+    top: 25%; left: 7.5%;
+    width: 35rem;
+    max-width: 80%;
+    z-index: 1;
+}
+
+.slider .list .item .content h2 {
+    font-family: var(--ff-trebuchet);
+    font-size: 3.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    margin: 0;
+
+    color: whitesmoke;
+}
+
+.slider .list .item .content p:first-child {
+    font-family: var(--ff-supreme);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 7.5px;
+}
+
+.slider .list .item .content p {
+    font-family: var(--ff-alata);
+    font-size: 1.25rem;
+
+    margin-block: .5rem;
+
+    color: hsl(0 0% 96% / .8);
+}
+
+.slider .list .item.active .content p:nth-child(1),
+.slider .list .item.active .content h2,
+.slider .list .item.active .content p:nth-child(3),
+.slider .list .item.active .content .item__link {
+    transform: translateY(1.875rem);
+    filter: blur(1.25rem);
+    opacity: 0;
+    animation: showContent 500ms 700ms ease-in-out 1 forwards;
+}
+
+.slider .list .item.active .content h2 {
+    animation-delay: 1s;
+}
+
+.slider .list .item.active .content p:nth-child(3) {
+    animation-duration: 1.3s;
+}
+
+.slider .list .item.active .content .item__link {
+    animation-duration: 1.7s;
+}
+
+.item__link {
+    display: inline-block;
+
+    font-family: var(--ff-trebuchet);
+    font-size: 1rem;
+    border: 1px solid whitesmoke;
+    border-radius: .5rem;
+
+    color: whitesmoke;
+
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    margin-block: 2.5rem;
+}
+
+.item__link:is(:focus, :hover) {
+    border: none;
+
+    background-color: #eee;
+    color: var(--clr-primary-200);
+}
+
+.arrows {
+    position: absolute;
+    top: 75%; left: 7.5%;
+    z-index: 99;
+}
+
+.arrows button {
+    border: none;
+    border-radius: .25rem;
+    width: 3.25rem; height: 3.25rem;
+    transition: 500ms;
+
+    margin-inline: .5rem;
+
+    background-color: #eee5;
+    color: white;
+}
+
+.arrows button:is(:focus, :hover) {
+    background-color: #eee;
+    color: var(--clr-primary-200);
+}
+
+.arrows button i {
+    display: flex;
+    justify-content: center;
+}
+
+.thumbnail {
+    position: absolute;
+    bottom: 3.125rem;
+    z-index: 11;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    overflow: auto;
+    box-sizing: border-box;
+    width: 100%;
+    height: 17.5rem;
+
+    padding: 0 3.125rem;
+}
+
+.thumbnail::-webkit-scrollbar {
+    width: 0;
+}
+
+.thumbnail .item {
+    flex-shrink: 0;
+    width: 12rem;
+    height: 17.5rem;
+    filter: brightness(.4);
+    transition: 500ms;
+}
+
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.thumbnail .item.active {
+    filter: brightness(1);
+}
+
+@media only screen and ( width < 65rem ) {
+    
+    .thumbnail {
+        justify-content: start;
+    }
+
+    .slider .list .item .content {
+        top: 20%;
+    }
+
+    .slider .list .item .content h2 {
+        font-size: 2.5rem;
+    }
+
+    .slider .list .item .content p:nth-child(1) {
+        font-size: 1rem;
+    }
+
+    .slider .list .item .content p:nth-child(3) {
+        font-size: 1rem;
+    }
+
+    .arrows {
+        display: none;
+    }
+
+    .thumbnail {
+        bottom: -2rem;
+    }
+
+    .thumbnail .item {
+        height: 14rem;
+        width: 9rem;
+    }
+
+}
+
+@media only screen and ( width < 65rem ) and ( height < 775px ) {
+
+    .slider .list .item .content p:nth-child(3) {
+        display: none;
+    }
+
+    .slider .list .item .content {
+        top: 20%;
+    }
+    .slider .list .item .content h2 {
+        font-size: 1.75rem;
+    }
+
+    .arrows {
+        top: 50%;
+    }
+
+    .arrows button:hover {
+        color: black;
+    }
+
+    .thumbnail {
+        bottom: -3rem;
+    }
+
+    .thumbnail .item {
+        height: 13.5rem;
+        width: 8.5rem;
+    }
+
+}
+
+@media only screen and (65rem > width > 45rem ) {
+
+    .slider .list .item .content {
+        width: 35rem;
+    }
+
+    .slider .list .item .content h2 {
+        font-size: 3.5rem;
+    }
+
+    .thumbnail {
+        height: 20rem;
+
+        bottom: 3rem;
+    }
+
+    .thumbnail .item {
+        height: 20rem;
+        width: 13.5rem;
+    }
+
+}

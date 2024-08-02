@@ -1,0 +1,145 @@
+.BMI {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+
+    margin-block: 5rem;
+}
+
+.BMI__grid-left > img {
+    width: 100%;
+    height: 50rem;
+    object-fit: cover;
+}
+
+.BMI__grid-right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    padding-inline: 3.5rem;
+}
+
+.BMI__grid-right > h3 {
+    font-family: var(--ff-trebuchet);
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    max-width: 25ch;
+
+    color: var(--clr-primary-200);
+}
+
+.BMI__grid-right > p {
+    font-family: var(--ff-alata);
+    font-size: 1.5rem;
+
+    color: #6b6c6c;
+
+    margin-block: .5rem;
+}
+
+.BMI__grid-right > form {
+    margin-block: 3rem;
+}
+
+.BMI__grid-right > form {
+    max-width: 32.5rem;
+}
+
+.BMI__grid-right > form > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-block: 1rem;
+}
+
+.BMI__grid-right > form > div > label {
+    font-family: var(--ff-trebuchet);
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    color: #737373;
+}
+
+.BMI__grid-right > form > div > input {
+    font-family: var(--ff-trebuchet);
+    font-size: 1.125rem;
+    border: 1px solid var(--clr-brdr);
+    border-radius: .5rem;
+    width: 80%;
+
+    padding-block: .75rem;
+    padding-inline: 1rem;
+
+    background-color: transparent;
+    color: var(--clr-brdr);
+}
+
+.BMI__btn {
+    font-family: var(--ff-trebuchet);
+    text-transform: uppercase;
+    border: none;
+    border-radius: .25rem;
+    cursor: pointer;
+    
+    margin-top: 4rem;
+    padding-inline: 5rem;
+    padding-block: 1rem;
+    
+    background-color: var(--clr-primary-400);
+    color: whitesmoke;
+}
+
+@media only screen and (width < 62.5em) {
+
+    .BMI {
+        display: flex;
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-inline: 2rem;
+    }
+
+    .BMI__grid-left > img {
+        height: 17.5rem;
+    }
+
+    .BMI__grid-right {
+        padding-inline: 0;
+    }
+
+    .BMI__grid-right label {
+        padding-right: .75rem;
+    }
+
+    .BMI__grid-right > form > div > input {
+        font-size: .85rem;
+        width: 70%;
+    }
+
+    .BMI__grid-right > form > .BMI__input-gender > button {
+        font-size: .85rem;
+        width: max-content;
+
+        padding-inline: .5rem;
+    }
+
+    .BMI__grid-right > form > .BMI__input-gender > button > span {
+        font-size: 1.25rem;
+        padding-inline: .25rem;
+    }
+
+    .BMI__grid-right > h3 {
+        font-size: 1.75rem;
+
+        margin: auto;
+        margin-top: 1.75rem;
+    }
+
+    .BMI__grid-right > p {
+        margin-block: 0;
+    }
+
+}

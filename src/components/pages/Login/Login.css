@@ -1,0 +1,87 @@
+.login {
+    display: grid;
+    place-content: center;
+
+    min-height: 100dvh;
+}
+
+.login h2 {
+    font-family: var(--ff-trebuchet);
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+
+    padding-bottom: 4rem;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login label {
+    font-family: var(--ff-trebuchet);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: .075rem;
+
+    color: var(--clr-txt-input);
+
+    margin-block: .375rem;
+    padding-block: .125rem;
+    padding-top: 1rem;
+}
+
+.login__link {
+    font-family: var(--ff-alata);
+    font-size: 1.25rem;
+    
+    color: var(--clr-secondary-200);
+
+    margin-block: 1.5rem;
+}
+
+.login input {
+    font-family: var(--ff-trebuchet);
+    font-size: 1.125rem;
+    width: 29.5rem;
+    border: 1px solid var(--clr-brdr);
+    border-radius: .75rem;
+
+    padding-block: .75rem;
+    padding-inline: 1.25rem;
+
+    color: var(--clr-brdr);
+    background-color: transparent;
+}
+
+.login__btn {
+    font-family: var(--ff-trebuchet);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .075rem;
+    border: none;
+    border-radius: .45rem;
+    cursor: pointer;
+
+    background-color: var(--clr-btn);
+    color: whitesmoke;
+
+    padding-block: .85rem;
+    padding-inline: 4.5rem;
+    margin-block: .75rem;
+}
+
+.login__btn:is(:focus, :hover) {
+    background-color: var(--clr-primary-200);
+    opacity: .9;
+}
+
+@media only screen and (width < 45em) {
+
+    .login input {
+        width: 85dvw;
+    }
+
+}
